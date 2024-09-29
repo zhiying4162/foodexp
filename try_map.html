@@ -1,0 +1,55 @@
+<!-- <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3614.7407256565407!2d121.52675560000003!3d25.042871500000015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442a97a6136e51f%3A0xd2134803b8545e0f!2zMTAw5Y-w5YyX5biC5Lit5q2j5Y2A5p2t5bee5Y2X6Lev5LiA5q61MTUtMeiZnw!5e0!3m2!1szh-TW!2stw!4v1436866505959" width="500" height="500" frameborder="0" class="img-responsive" style="border:0" allowfullscreen></iframe> -->
+<!-- google_map_API參考資料： https://medium.com/front-end-augustus-study-notes/google-map-api-1-a4e794b0162f -->
+<!-- google_map_API參考資料：https://www.weya.com.tw/design/google-map-api-key -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>偵測位置並顯示地圖</title>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
+    <script>
+        function initMap() {
+            // 創建地圖並設置初始位置
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 15,
+                center: {lat: -34.397, lng: 150.644}
+            });
+
+            // 使用 HTML5 Geolocation API 來獲取使用者的位置
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function(position) {
+                    var pos = {
+                        lat: position.coords.latitude,
+                        lng: position.coords.longitude
+                    };
+
+                    // 在地圖上顯示使用者的位置
+                    var marker = new google.maps.Marker({
+                        position: pos,
+                        map: map
+                    });
+
+                    // 將地圖中心設置為使用者的位置
+                    map.setCenter(pos);
+                }, function() {
+                    handleLocationError(true, map.getCenter());
+                });
+            } else {
+                // 瀏覽器不支持 Geolocation
+                handleLocationError(false, map.getCenter());
+            }
+        }
+
+        function handleLocationError(browserHasGeolocation, pos) {
+            var infoWindow = new google.maps.InfoWindow({map: map});
+            infoWindow.setPosition(pos);
+            infoWindow.setContent(browserHasGeolocation ?
+                                  'Error: The Geolocation service failed.' :
+                                  'Error: Your browser doesn\'t support geolocation.');
+        }
+    </script>
+</head>
+<body onload="initMap()">
+    <h1>我的位置</h1>
+    <div id="map" style="height: 500px; width: 100%;"></div>
+</body>
+</html>

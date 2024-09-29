@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="rwdd.css">
+    <title>購物清單</title>
+    <script src="Script.js">
+
+
+        // function showConfirmationDialog() {
+        //   document.write (168);
+        //   var result = confirm("家中尚有相同商品，是否要新增？");
+        //   if (result) {
+        //       // 如果用戶點擊確定，提交表單
+        //       document.getElementById('submitForm').submit();
+        //   } else {
+        //       // 如果用戶點擊取消，不做任何操作
+        //   }
+        // }
+        </script>
+</head>
+<body>
+    <div class="titArea">
+        購物清單
+        
+        <div class="Loubtn">
+                <!-- <button id="SearchBuy" onclick="">找尋商品</button> -->
+                <button id="Add" onclick="backtolist()">回主畫面</button>
+        </div>
+    
+    </div>
+    <div class="button-container">
+        <button class="btn" id="btn0">首頁</button>
+        <button class="btn" id="btn1"><span>歷史</span><span>紀錄</span></button>
+        <button class="btn" id="btn2"><span>食品</span><span>紀錄</span></button>
+        <button class="btn" id="btn3"><span>購物</span><span>清單</span></button>
+        <button class="btn" id="btn4"><span>即期</span><span>查詢</span></button>
+        <button class="btn" id="btn5"><span>推薦</span><span>商家</span></button> 
+    </div>
+    <form action="ToBuyINSERT.php" method="post" name="listForm" id="listForm">
+        <label for="ListName">品名：</label>
+        <br>
+        <input type="text" id="ListName" name="ListName" required style="font-size: large;">
+        <br>
+        <br>
+        <label for="expiryDate">數量：</label>
+        <br>
+        <input type="text" id="quantity" name="quantity" required style="font-size: large;">
+        <br>
+        <br>
+        <label for="expiryDate">備註：</label>
+        <br>
+        <input type="text" id="remark" name="remark" required style="font-size: large;">
+        <br>
+        <br>
+        <div class="button-con">
+            <input type="reset" name="reset" id="reset" class="custom-button" value="重製">
+            <input type="submit" name="submit" id="submit" class="custom-button" value="確定">
+        </div>
+    </form>
+    
+
+<script src="Script.js"></script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="rwdd.css">
+    <title>商品資訊輸入</title>
+</head>
+<body>
+    <div class="titArea">
+        食品紀錄
+    </div>
+    <div class="button-container">
+        <button class="btn" id="btn0">首頁</button>
+        <button class="btn" id="btn1"><span>歷史</span><span>紀錄</span></button>
+        <button class="btn" id="btn2"><span>食品</span><span>紀錄</span></button>
+        <button class="btn" id="btn3"><span>購物</span><span>清單</span></button>
+        <button class="btn" id="btn4"><span>即期</span><span>查詢</span></button>
+        <button class="btn" id="btn5"><span>推薦</span><span>商家</span></button> 
+    </div>
+    <form action="EnterTxt.php" method="post" name="productForm" id="productForm">
+        <label for="productName">品名：</label>
+        <br>
+        <input type="text" id="productName" name="productName" required style="font-size: large;" >
+        <br>
+        <br>
+        <label for="expiryDate">有效日期：</label>
+        <br>
+        <input type="date" id="expiryDate" name="expiryDate" required style="font-size: large;">
+        <br>
+        <br>
+        <label for="Classification">分類：</label>
+        <br>
+        <select name="kind" required style="font-size: large;">
+            <option value="other" selected >請選擇食品類型</option>
+            <option value="meat">肉品類</option>
+            <option value="seafood">海鮮類</option>
+            <option value="vegetable">蔬菜類</option>
+            <option value="fruit">水果類</option>
+            <option value="drinks">飲品類</option>
+            <option value="sauce">調味料</option>
+            <option value="other">其他</option>
+        </select>
+        <div class="button-con">
+            <input type="reset" name="reset" id="reset" class="custom-button" value="重製">
+            <input type="submit" name="submit" id="submit" class="custom-button" value="確定">
+        </div>
+    </form>
+<script src="Script.js"></script>
+</body>
+</html>

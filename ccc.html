@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    #button1 {
+      position: fixed;
+      bottom: 10px;
+      padding: 10px;
+    }
+    #button2 {
+      position: fixed;
+      bottom: 10px;
+      padding: 10px;
+      margin-left: 85px;
+    }
+    #button3 {
+      position: fixed;
+      bottom: 10px;
+      padding: 10px;
+      margin-left: 170px;
+    }
+    #button4 {
+      position: fixed;
+      bottom: 10px;
+      padding: 10px;
+      margin-left: 255px;
+    }
+    #button5 {
+      position: fixed;
+      bottom: 10px;
+      padding: 10px;
+      margin-left: 340px;
+    }
+  </style>
+  <title>Test Buttons</title>
+</head>
+<body>
+
+<button id="button1" onclick="navigateTo('pageA.html')">拍攝照片</button>
+<button id="button2" onclick="navigateTo('pageB.html')">食品紀錄</button>
+<button id="button3" onclick="navigateTo('pageC.html')">購物清單</button>
+<button id="button4" onclick="navigateTo('pageD.html')">即期查詢</button>
+<button id="button5" onclick="navigateTo('pageE.html')">推薦商家</button>
+
+<script>
+  function navigateTo(page) {
+    window.location.href = page;
+  }
+</script>
+
+</body>
+</html>
